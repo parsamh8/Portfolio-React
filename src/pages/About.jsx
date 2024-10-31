@@ -1,7 +1,10 @@
 import Animated from "../components/Animated"
+import selfImg from "../assets/selfme.png"
+
 export default  function About() {
 
     return (
+        <>
         <Animated>
         <div style={{padding: 40}}>
         <h1> My Story</h1>
@@ -18,6 +21,8 @@ export default  function About() {
       </button>
         </div>
         </Animated>
+        <img className="selfImg" src={selfImg} alt="describtion of myself" />
+        </>
     )
 
 }

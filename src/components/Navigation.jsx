@@ -14,9 +14,9 @@ return (
             </div>
 
             <div style={{margin : 20}}>
-            <Link to="/Portfolio"
-            className={currentPage === '/Portfolio' ? 'mav-link active' : 'nav-link'}>
-                Portfolio
+            <Link to="/Projects"
+            className={currentPage === '/Projects' ? 'mav-link active' : 'nav-link'}>
+                Projects
             </Link>
             </div>
 

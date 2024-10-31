@@ -23,6 +23,10 @@ span {
   color: var(--green)
 }
 
+.active {
+  color: rgb(179, 255, 0);
+}
+
 .box {
   outline: 2px solid var(--green);
   width: 90%;
@@ -57,6 +61,19 @@ img {
   height: auto;
   display: block;
   
+}
+
+.selfImg {
+  width: 160px;
+  height: 150px;
+  border-radius: 47%;
+  display: flex;
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  border: 20px #12f01d;
+
+
 }
 
 .nav-button {

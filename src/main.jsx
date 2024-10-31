@@ -6,7 +6,7 @@ import App from './App'
 
 // pages
 import About from './pages/About'
-import Portfolio from './pages/Portfolio'
+import Projects from './pages/Projects'
 import Contact from './pages/Contact'
 // import Error from './pages/Error'
 // components
@@ -30,8 +30,8 @@ const router = createBrowserRouter([
          path: 'contact',
          element: <Contact />,
        },{
-        path: 'portfolio',
-        element: <Portfolio />
+        path: 'projects',
+        element: <Projects />
        }
      ],
    },

@@ -20,18 +20,18 @@ const projects = [
     }
 ]
 
-export default function Project() {
+export default function Projects() {
     return (
         <Animated>
-            <section className="box">
+            <section >
                 <div>
                     <div >
                         <img className='img-portfolio' src={myImage} alt="describtion of myself" />
                     </div>
                     <div>
-                        < PortfoliosItem github={projects[0].github} deployed={projects[0].deployed} img={projects[0].img} />
+                        <h3>Check out some of my projects below</h3>
                         <h2>FlexWeather</h2>
-                        <p>Check out some of my projects below</p>
+                        <PortfoliosItem github={projects[0].github} deployed={projects[0].deployed} image={projects[0].img} />
                     </div>
                 </div>
             </section>
