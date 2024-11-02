@@ -22,19 +22,21 @@ const projects = [
 
 export default function Projects() {
     return (
-        <Animated>
-            <section >
-                <div>
-                    <div >
-                        <img className='img-portfolio' src={myImage} alt="describtion of myself" />
-                    </div>
+        <>
+            <div >
+                <img className='img-portfolio' src={myImage} alt="describtion of myself" />
+            </div>
+            <Animated>
+                <section >
                     <div>
-                        <h3>Check out some of my projects below</h3>
-                        <h2>FlexWeather</h2>
-                        <PortfoliosItem github={projects[0].github} deployed={projects[0].deployed} image={projects[0].img} />
+                        <div>
+                            <h3>Check out some of my projects below</h3>
+                            <h2>FlexWeather</h2>
+                            <PortfoliosItem github={projects[0].github} deployed={projects[0].deployed} image={projects[0].img} />
+                        </div>
                     </div>
-                </div>
-            </section>
-        </Animated>
+                </section>
+            </Animated>
+        </>
     )
 }
