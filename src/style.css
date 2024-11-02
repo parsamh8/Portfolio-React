@@ -167,6 +167,7 @@ h1 {
     position: absolute;
     flex-direction: row;
     left: 50px;
+    top: 70px;
 
   }
 
@@ -174,6 +175,7 @@ h1 {
     position: absolute;
     flex-direction: row;
     left: 50px;
+    top: 70px;
   }
 
 }
