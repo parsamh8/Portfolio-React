@@ -162,14 +162,19 @@ h1 {
     
   }
 
-}
+  .img-container {
 
-@media (max-width: 365px) {
-  body {
-    font-size: 14px;
-    margin: 10px;
-    margin-top: 8rem;
+    position: absolute;
+    flex-direction: row;
+    left: 50px;
+
   }
 
+  .img-portfolio {
+    position: absolute;
+    flex-direction: row;
+    left: 50px;
+  }
 
 }
+

@@ -4,8 +4,8 @@ import Animated from "../components/Animated"
 export default function Body() {
     return (
     <Animated >
-    <div className='img-container'>
-        <img src={myImage} alt="describtion of myself"/>
+    <div>
+        <img className='img-container' src={myImage} alt="describtion of myself"/>
     </div>
 
     <div style={{padding: 35}}>
