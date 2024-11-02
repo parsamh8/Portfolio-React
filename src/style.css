@@ -151,4 +151,23 @@ h1 {
 }
 
 
+@media (max-width: 435px) {
+  body {
+    font-size: 14px;
+    margin: 10px;
+  }
+  footer .footerInfo {
+    padding-right: 35px;
+    
+  }
 
+}
+
+@media (max-width: 365px) {
+  body {
+    font-size: 14px;
+    margin: 10px;
+    margin-top: 9rem;
+  }
+
+}
