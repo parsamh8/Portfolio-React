@@ -45,8 +45,9 @@ function Form() {
 
     return (
         <div>
-            <div className="container text-center contact-me-form">
-                <form className="form" onSubmit={handleFormSubmit}>
+            <div style={{paddingLeft: 23}} className="container text-center contact-me-form">
+                <div></div>
+                <form  className="form" onSubmit={handleFormSubmit}>
                     <input
                         value={email}
                         name="email"

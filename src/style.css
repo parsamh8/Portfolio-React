@@ -329,6 +329,17 @@ textarea {
     left: 65px;
   }
 
+  .project-header  {
+    position: absolute;
+    right: 40px;
+    top: 30px;
+  }
+  .projects-container {
+    top: 500px;
+    position: absolute;
+    right: 130px;
+  }
+
   .contact-me-form {
     position: absolute;
     top: 430px;

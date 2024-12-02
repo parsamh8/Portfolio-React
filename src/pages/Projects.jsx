@@ -10,7 +10,7 @@ export default function Projects() {
         <>
             <Animated>
                 <section >
-                    <h2 className='project-header'>Check out some of my <span>projects</span> below</h2>
+                    <h1 className='project-header'>Check out some of my <span>projects</span> below</h1>
                     <div className='center'>
                         <div className='projects-container flex'>
                             <div>
