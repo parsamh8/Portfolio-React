@@ -7,7 +7,7 @@ export default function Contact() {
         <>
         <img className='img-portfolio' src={myContactImage} alt="boxes rotate contact me" />
         <Animated>
-            <div>
+            <div className="contact-me">
                 <h1 style={{padding: 40}}>Contact Me</h1>
             </div>
             <div>

@@ -319,8 +319,19 @@ textarea {
   .img-portfolio {
     position: absolute;
     flex-direction: row;
-    left: 50px;
+    left: 65px;
     top: 70px;
+  }
+
+  .contact-me {
+    position: absolute;
+    top: 310px;
+    left: 65px;
+  }
+
+  .contact-me-form {
+    position: absolute;
+    top: 430px;
   }
 
 }
