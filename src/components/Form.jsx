@@ -1,11 +1,11 @@
-import { checkPassword, validateEmail } from "../utils/helper"
+import { validateEmail } from "../utils/helper"
 import { useState } from 'react';
 
 function Form() {
 
     const [email, setEmail] = useState('');
     const [userName, setUserName] = useState('');
-    const [password, setPassword] = useState('');
+    const [message, themessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleInputChange = (e) => {
@@ -19,7 +19,7 @@ function Form() {
         } else if (inputType === 'userName') {
             setUserName(inputValue);
         } else {
-            setPassword(inputValue);
+            themessage(inputValue);
         }
     };
     const handleFormSubmit = (e) => {
@@ -28,22 +28,17 @@ function Form() {
 
         // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
         if (!validateEmail(email) || !userName) {
-            setErrorMessage('Email or username is invalid');
+            setErrorMessage(`Email or usename is invalid. (also can't be empty!)`);
             // We want to exit out of this code block if something is wrong so that the user can correct it
             return;
             // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
         }
-        if (!checkPassword(password)) {
-            setErrorMessage(
-                `Choose a more secure password for the account: ${userName}`
-            );
-            return;
-        }
+
         alert(`Parsa Will Contact You Soon`);
 
         // If everything goes according to plan, we want to clear out the input after a successful registration.
         setUserName('');
-        setPassword('');
+        themessage('');
         setEmail('');
 
     };
@@ -64,15 +59,15 @@ function Form() {
                         name="userName"
                         onChange={handleInputChange}
                         type="text"
-                        placeholder="username"
+                        placeholder="name"
                     />
-                    <input
-                        value={password}
-                        name="password"
+                    <textarea
+                        value={message}
+                        name="message"
                         onChange={handleInputChange}
-                        type="password"
-                        placeholder="password"
-                    />
+                        type="message"
+                        placeholder="your message"
+                    /><br/>
                     <button type="submit">Submit</button>
                 </form>
                 {errorMessage && (

@@ -1,41 +1,29 @@
-import PortfoliosItem from './PortfoliosItem';
-import Animated from "../components/Animated";
-import myImage from "../assets/projects1.gif";
 
-const projects = [
-    {
-        github: "https://github.com/parsamh8/ForecastFlex",
-        deployed: "https://forecastflex.onrender.com/",
-        img: ""
-    },
-    {
-        github: "",
-        deployed: "",
-        img: ""
-    },
-    {
-        github: "",
-        deployed: "",
-        img: ""
-    }
-]
+import Animated from "../components/Animated";
+import projects from '../data/projects.json';
+import PortfoliosItem from "./PortfoliosItem";
 
 export default function Projects() {
+
+
     return (
         <>
-            <div >
-                <img className='img-portfolio' src={myImage} alt="describtion of myself" />
-            </div>
             <Animated>
                 <section >
-                    <div>
-                        <div>
-                            <h3>Check out some of my projects below</h3>
-                            <h2>FlexWeather</h2>
-                            <PortfoliosItem github={projects[0].github} deployed={projects[0].deployed} image={projects[0].img} />
+                    <h2 className='project-header'>Check out some of my <span>projects</span> below</h2>
+                    <div className='center'>
+                        <div className='projects-container flex'>
+                            <div>
+                                {projects.map((project, id) => {
+                                    return <PortfoliosItem key={id} project={project}/>
+                                })}
+                            </div>
                         </div>
                     </div>
                 </section>
+                <div>
+                    <p>all the site reserve</p>
+                </div>
             </Animated>
         </>
     )
