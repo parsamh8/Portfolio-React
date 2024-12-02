@@ -15,7 +15,7 @@ function PortfoliosItem({
         <p className="project-description ">{desciption}</p>
         <div className="links">
             <a href={demo} target="_blank" rel="noopener noreferrer" className="link">
-                Demo
+                Deploy
             </a>
             <a href={source} target="_blank" rel="noopener noreferrer" className="link">
                 Source

@@ -4,47 +4,47 @@
         "title" : "ForecastFlex",
         "img" : "forecastapp.gif",
         "desciption" : "ForecastFlex is a dynamic weather forecasting app that provides real-time, accurate weather updates with flexible and customizable features for users to track the weather condition based on a city and forecast for the next 4 days.",
-        "demo" : "http://demo.com",
-        "source" : "githubrepo.com"
+        "demo" : "https://forecastflex.onrender.com/",
+        "source" : "https://github.com/parsamh8/ForecastFlex"
     },
     {
         "id" : 2,
         "title" : "Hipub",
         "img" : "hipub.gif",
         "desciption" : "More and more people in their 20s and 30s are online. To help them connect with friends in person, we've created a fun virtual bar where people can interact with AI for great local hangout recommendations!",
-        "demo" : "http://demo.com",
-        "source" : "githubrepo.com"
+        "demo" : "https://hipub.onrender.com/",
+        "source" : "https://github.com/jake-magri/Hipub"
     },
     {
         "id" : 3,
         "title" : "Color Racer",
         "img" : "carracer.gif",
         "desciption" : "Color Racer is a two-player racing game created as the first project for a coding bootcamp. The game is designed to test the typing speed of each player using keydown and keyup event listeners. Players race by typing as fast as they can to reach the finish line.",
-        "demo" : "http://demo.com",
-        "source" : "githubrepo.com"
+        "demo" : "https://mr-mikeross.github.io/Color-Racer/",
+        "source" : "https://github.com/Mr-MikeRoss/Color-Racer"
     },
     {
         "id" : 4,
         "title" : "iBook",
         "img" : "book.gif",
         "desciption" : "iBook is a MERN stack app featuring a Google Books API search engine, refactored from RESTful to GraphQL with Apollo Server. Users can search for and save books seamlessly.",
-        "demo" : "http://demo.com",
-        "source" : "githubrepo.com"
+        "demo" : "https://ibook-mj19.onrender.com/",
+        "source" : "https://github.com/parsamh8/iBook"
     },
     {
         "id" : 5,
-        "title" : "The Gear Knobs",
+        "title" : "Employee Tracker",
         "img" : "gearknobs.PNG",
-        "desciption" : "The GearKnobs is a Node.js CLI app that lets users create, customize, and manage vehicles like cars, trucks, and motorbikes. Built with TypeScript, it follows OOP principles for clean and scalable code.",
-        "demo" : "http://demo.com",
-        "source" : "githubrepo.com"
+        "desciption" : "Employee Tracker is a command-line app for managing an organization’s employee database. It allows users to view and manage departments, roles, and employees directly in the terminal, using Inquirer for prompts and PostgreSQL for data handling.",
+        "demo" : "https://drive.google.com/file/d/1_bBPrp8RuCxCqPAiNgObLnNc-JZs_3ly/view",
+        "source" : "https://github.com/parsamh8/employee-tracker"
     },
     {
         "id" : 6,
         "title" : "DevOpsPipe",
         "img" : "pipes.gif",
         "desciption" : "This project showcases a CI/CD pipeline with GitHub Actions, running tests on pull requests to the develop branch and auto-deploying to Render on main branch merges. It ensures code quality, stability, and seamless updates for confident feature integration.",
-        "demo" : "http://demo.com",
-        "source" : "githubrepo.com"
+        "demo" : "https://github.com/parsamh8/DevOpsPipe",
+        "source" : "https://github.com/parsamh8/DevOpsPipe"
     }
 ]
