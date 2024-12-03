@@ -107,13 +107,12 @@ img {
 }
 
 footer {
-  position: fixed;
   width: 100%;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   text-align: center;
 }
@@ -127,6 +126,8 @@ footer {
   transition: all 0.25s ease-in;
   display: inline-block;
   padding: 0 50px;
+  margin-bottom: 20px;
+  padding: 0 100px;
 }
 
 a {
@@ -183,6 +184,16 @@ h1 {
   padding: 20px;
   margin: 0 auto;
   margin-bottom: 0.5rem;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card-container:hover {
+  /* font-weight: bold; */
+  background-color: #000000; /* Bright yellow background */
+  color: #333; /* Change text color for contrast */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  transform: scale(1.08); /* Slightly enlarge the card */
 }
 
 /* Project Card Styling */
@@ -292,8 +303,19 @@ textarea {
     margin-top: 4rem;
   }
   footer .footerInfo {
-    padding-right: 35px;
+    /* padding-right: 35px; */
+    position: absolute;
+    text-align: justify;
     
+  }
+
+  .footerInfo a {
+    margin: 0px;
+    margin-bottom: 20px;
+    padding: 30px;
+    padding-bottom: 0px;
+    position: fixed;
+    bottom: 20px;
   }
 
   .img-container {
@@ -310,6 +332,10 @@ textarea {
     flex-direction: row;
     left: 65px;
     top: 70px;
+  }
+
+  .homepage {
+    margin-top: 100px;
   }
 
   .contact-me {

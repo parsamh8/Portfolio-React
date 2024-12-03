@@ -19,9 +19,6 @@ export default function Projects() {
                         </div>
                     </div>
                 </section>
-                <div>
-                    <p>all the site reserve</p>
-                </div>
             </Animated>
         </>
     )
