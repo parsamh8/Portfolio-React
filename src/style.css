@@ -183,12 +183,9 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  width: 50%;
-  max-width: 1200px;
   padding: 20px;
   margin: 0 auto;
   margin-bottom: 3rem;
-  margin-left: 30rem;
 }
 
 /* Project Card Styling */
@@ -345,5 +342,19 @@ textarea {
     top: 430px;
   }
 
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+  gap: 10px; /* Optional spacing between columns */
+}
+
+.grid-item {
+  grid-column: span 3; /* Each item spans 6 columns */
+  background-color: #43464a; /* Optional styling */
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #242424; /* Optional styling */
 }
 

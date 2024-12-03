@@ -12,12 +12,10 @@ export default function Projects() {
                 <section >
                     <h1 className='project-header'>Check out some of my <span>projects</span> below</h1>
                     <div className='center'>
-                        <div className='projects-container flex'>
-                            <div>
+                        <div className='projects-container grid-container flex'>
                                 {projects.map((project, id) => {
                                     return <PortfoliosItem key={id} project={project}/>
                                 })}
-                            </div>
                         </div>
                     </div>
                 </section>

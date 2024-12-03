@@ -8,7 +8,7 @@ function PortfoliosItem({
         return new URL(`/src/assets/${path}`, import.meta.url).href;
     }
     return (
-<div className="project-card-container between-margin">
+<div className="grid-item project-card-container between-margin">
     <div className="card-content">
         <img src={getImgUrl(img)} alt={`img of ${title}`} className="project-image" />
         <h2 className="project-title">{title}</h2>
