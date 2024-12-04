@@ -14,7 +14,7 @@ export default function About() {
           <button>
             <a
               href="/src/assets/resume.pdf"
-              download="My_Resume.pdf"
+              download="resume.pdf"
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
               Download Resume
