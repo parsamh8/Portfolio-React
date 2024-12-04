@@ -48,17 +48,6 @@ img {
   top: 150px;
 }
 
-.img-container {
-  /* display: block;
-  place-items: center;
-  width: 300px;
-  height: auto;
-  position: fixed;
-  right: 550px;
-  top: 150px;
-  z-index: 0; */
-}
-
 .img-portfolio {
   position: absolute;
   width: 300px;
@@ -73,7 +62,7 @@ img {
   border-radius: 47%;
   display: flex;
   position: absolute;
-  top: 80px;
+  top: 120px;
   left: 50px;
   border: 20px #12f01d;
 
@@ -205,7 +194,7 @@ h1 {
   margin: 0 auto;
   margin-bottom: 0.5rem;
   border-radius: 50px;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .project-card-container:hover {
@@ -213,7 +202,7 @@ h1 {
   background-color: #000000; /* Bright yellow background */
   color: #333; /* Change text color for contrast */
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Stronger shadow */
-  transform: scale(1.08); /* Slightly enlarge the card */
+  transform: scale(1.04); /* Slightly enlarge the card */
 }
 
 /* Project Card Styling */
@@ -326,28 +315,13 @@ textarea {
     margin: 10px;
     margin-top: 4rem;
   }
-  /* footer .footerInfo {
-    padding-right: 35px;
-    position: absolute;
-    text-align: justify;
-    
-  }
-
-  .footerInfo a {
-    margin: 0px;
-    margin-bottom: 20px;
-    padding: 30px;
-    padding-bottom: 0px;
-    position: fixed;
-    bottom: 20px;
-  } */
 
   .img-container {
 
-    /* position: absolute;
+    position: absolute;
     flex-direction: row;
-    left: 70px;
-    top: 100px; */
+    left: 50px;
+    top: -250px;
 
   }
 
@@ -384,12 +358,22 @@ textarea {
     top: 430px;
   }
 
+  /* .animated-container{
+    position: absolute;
+    top: 30px;
+  } */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
+    gap: 10px; /* Optional spacing between columns */
+  }
+
 }
 
 .grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
-  gap: 10px; /* Optional spacing between columns */
+  gap: 1px; /* Optional spacing between columns */
 }
 
 .grid-item {
@@ -431,4 +415,8 @@ main {
 
 .contact-me {
 margin-top: 20vh;
+}
+
+.about-container {
+  margin-top: 30vh;
 }
