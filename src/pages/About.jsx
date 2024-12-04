@@ -13,7 +13,7 @@ export default function About() {
           <p>To deepen my knowledge and expand my skill set, I joined the University of Toronto's Full Stack Development program, running from September to December 2024. This program has provided hands-on experience with cutting-edge technologies, including MongoDB, Express.js, React, and Node.js, along with essential tools like Git, REST APIs, and deployment pipelines. Outside of work and study, I find inspiration in timeless music—I'm an avid fan of <span>The Beatles</span>—and enjoy the company of my cat, PJ, who adds a lively touch to my day. Balancing technical expertise and creative energy, I’m eager to apply my skills to dynamic projects and explore the boundless possibilities of web development.</p>
           <button>
             <a
-              href="/resume.pdf"
+              href="/src/assets/resume.pdf"
               download="My_Resume.pdf"
               style={{ textDecoration: 'none', color: 'inherit' }}
             >
