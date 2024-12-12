@@ -1,11 +1,11 @@
 [
     {
         "id" : 1,
-        "title" : "ForecastFlex",
-        "img" : "forecastapp.gif",
-        "desciption" : "ForecastFlex is a dynamic weather forecasting app that provides real-time, accurate weather updates with flexible and customizable features for users to track the weather condition based on a city and forecast for the next 4 days.",
-        "demo" : "https://forecastflex.onrender.com/",
-        "source" : "https://github.com/parsamh8/ForecastFlex"
+        "title" : "Volt Underground",
+        "img" : "volt-underground.png",
+        "desciption" : "Music fans need an easy way to discover and support underground electronic events, while organizers need a better ticketing solution. Volt Underground bridges this gap. It's an e-commerce platform for organizers to sell tickets.",
+        "demo" : "https://volt-underground.onrender.com/",
+        "source" : "https://github.com/parsamh8/Volt-Underground"
     },
     {
         "id" : 2,
@@ -17,6 +17,14 @@
     },
     {
         "id" : 3,
+        "title" : "ForecastFlex",
+        "img" : "forecastapp.gif",
+        "desciption" : "ForecastFlex is a dynamic weather forecasting app that provides real-time, accurate weather updates with flexible and customizable features for users to track the weather condition based on a city and forecast for the next 4 days.",
+        "demo" : "https://forecastflex.onrender.com/",
+        "source" : "https://github.com/parsamh8/ForecastFlex"
+    },
+    {
+        "id" : 4,
         "title" : "Color Racer",
         "img" : "carracer.gif",
         "desciption" : "Color Racer is a two-player racing game created as the first project for a coding bootcamp. The game is designed to test the typing speed of each player using keydown and keyup event listeners. Players race by typing as fast as they can to reach the finish line.",
@@ -24,7 +32,7 @@
         "source" : "https://github.com/Mr-MikeRoss/Color-Racer"
     },
     {
-        "id" : 4,
+        "id" : 5,
         "title" : "iBook",
         "img" : "book.gif",
         "desciption" : "iBook is a MERN stack app featuring a Google Books API search engine, refactored from RESTful to GraphQL with Apollo Server. Users can search for and save books seamlessly.",
@@ -32,7 +40,7 @@
         "source" : "https://github.com/parsamh8/iBook"
     },
     {
-        "id" : 5,
+        "id" : 6,
         "title" : "Employee Tracker",
         "img" : "gearknobs.PNG",
         "desciption" : "Employee Tracker is a command-line app for managing an organization’s employee database. It allows users to view and manage departments, roles, and employees directly in the terminal, using Inquirer for prompts and PostgreSQL for data handling.",
@@ -40,7 +48,7 @@
         "source" : "https://github.com/parsamh8/employee-tracker"
     },
     {
-        "id" : 6,
+        "id" : 7,
         "title" : "DevOpsPipe",
         "img" : "pipes.gif",
         "desciption" : "This project showcases a CI/CD pipeline with GitHub Actions, running tests on pull requests to the develop branch and auto-deploying to Render on main branch merges. It ensures code quality, stability, and seamless updates for confident feature integration.",
