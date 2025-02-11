@@ -4,7 +4,7 @@ import { useState } from 'react';
 function Form() {
 
     const [email, setEmail] = useState('');
-    const [userName, setUserName] = useState('');
+    const [name, setUserName] = useState('');
     const [message, themessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
@@ -16,7 +16,7 @@ function Form() {
 
         if (inputType === 'email') {
             setEmail(inputValue);
-        } else if (inputType === 'userName') {
+        } else if (inputType === 'name') {
             setUserName(inputValue);
         } else {
             themessage(inputValue);
@@ -27,7 +27,7 @@ function Form() {
         e.preventDefault();
 
         // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
-        if (!validateEmail(email) || !userName) {
+        if (!validateEmail(email) || !name) {
             setErrorMessage(`Email or Name is invalid.`);
             // We want to exit out of this code block if something is wrong so that the user can correct it
             return;
@@ -45,30 +45,33 @@ function Form() {
 
     return (
         <div>
-            <div style={{paddingLeft: 23}} className="container text-center contact-me-form">
+            <div style={{ paddingLeft: 23 }} className="container text-center contact-me-form">
                 <div></div>
-                <form  className="form" onSubmit={handleFormSubmit}>
+                <form action="https://api.web3forms.com/submit" method="POST" className="form" onSubmit={handleFormSubmit}>
+                    <input type="hidden" name="access_key" value="7fd63e3d-ec66-4bc4-ae1c-590dad675148"/>
+
                     <input
-                        value={email}
-                        name="email"
-                        onChange={handleInputChange}
-                        type="email"
-                        placeholder="email"
-                    />
-                    <input
-                        value={userName}
-                        name="userName"
+                        value={name}
+                        name="name" required
                         onChange={handleInputChange}
                         type="text"
                         placeholder="name"
                     />
+                    <input
+                        value={email}
+                        name="email" required
+                        onChange={handleInputChange}
+                        type="email"
+                        placeholder="email"
+                    />
                     <textarea
                         value={message}
-                        name="message"
+                        name="message" required
                         onChange={handleInputChange}
                         type="message"
                         placeholder="your message"
-                    /><br/>
+                    ></textarea>
+                    <br/>
                     <button type="submit">Submit</button>
                 </form>
                 {errorMessage && (
