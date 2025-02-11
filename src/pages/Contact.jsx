@@ -10,7 +10,7 @@ export default function Contact() {
             </div>
             <Animated>
                 <div className="contact-me">
-                    <h1 style={{ padding: 40 }}>Contact Me</h1>
+                    <h1 className='vt323' style={{ padding: 40}}>Contact Me</h1>
                 </div>
                 <div>
                 </div>

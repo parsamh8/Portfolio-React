@@ -23,7 +23,7 @@ return (
             <div style={{margin : 20}}>
             <Link class="nav-link" href="#" to="/About"
             className={currentPage === '/About' ? 'mav-link active' : 'nav-link'}>
-                About
+                Bio
             </Link>
             </div>
 

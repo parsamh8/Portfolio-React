@@ -317,12 +317,10 @@ textarea {
   }
 
   .img-container {
-
     position: absolute;
     flex-direction: row;
     left: 50px;
     top: -250px;
-
   }
 
   .img-portfolio {
@@ -420,3 +418,24 @@ margin-top: 20vh;
 .about-container {
   margin-top: 30vh;
 }
+
+.virtual-color {
+  background-image: linear-gradient(45deg, #00ff2a, #11550b, #0ea009, #38d423, #108b10, #54ec18, #096906, #1db618);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorShift 0.8s infinite linear;
+}
+
+@keyframes colorShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.vt323 {
+  font-family: "VT323", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+

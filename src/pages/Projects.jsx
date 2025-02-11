@@ -10,7 +10,7 @@ export default function Projects() {
         <>
             <Animated>
                 <section >
-                    <h1 className='project-header'>Check Out Some Of My <span>Projects</span> Below</h1>
+                    <h1 className='project-header vt323'>Check Out Some Of My <span className='vt323'>Projects</span> Below</h1>
                     <div className='center'>
                         <div className='projects-container grid-container flex'>
                                 {projects.map((project, id) => {
