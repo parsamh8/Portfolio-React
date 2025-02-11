@@ -440,3 +440,42 @@ margin-top: 20vh;
 .green {
   color: var(--green);
 }
+
+.email-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  position: fixed;
+  right: -54px; /* Moves slightly to the left */
+  top: 50%;
+  transform: rotate(90deg) translateY(-50%);
+  font-size: 36px;
+  color: var(--green); /* Adjust color as needed */
+  animation: moveDown 5s linear infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .email-vertical {
+    font-size: 14px;
+    right: 20px; /* Adjusts for smaller screens */
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: -50px; /* Start above the viewport */
+  }
+  100% {
+    top: 114vh; /* Move to the bottom */
+  }
+}
+
+.moving-image {
+  position: absolute;
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.5s ease-in-out;
+}
