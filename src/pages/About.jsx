@@ -4,16 +4,16 @@ import selfImg from "../assets/selfme.png";
 export default function About() {
   return (
     <>
+<img className="selfImg" src={selfImg} alt="Description of myself" style={{ width: '200px', height: 'auto', borderRadius: '50%', margin: '20px' }} />
       <Animated>
-        <div className="about-container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', padding: '40px' }}>
+        <div className="about-container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', padding: '20px' }}>
           <div style={{ flexGrow: 1, minWidth: '60%', padding: '0 20px' }}>
             <h1 className='vt323'>About</h1>
             <p className='vt323 vt323-size'>Parsa (b. 1994, Tehran) is a multidisciplinary designer based in Toronto, whose expertise spans across web design, digital art installations, and live visual performances. A graduate of the University of Toronto’s Full Stack Software Development program, he is proficient in both MERN and PERN stack applications, crafting interfaces and experiences that are not only functional but artistically engaging. His work often draws upon retro-inspired aesthetics, merging them with cutting-edge digital techniques to create unique visual narratives.</p>
             <p className='vt323 vt323-size'>His passion extends into the realm of VJing and video art, where he utilizes TouchDesigner to create compelling video visuals centered around facial expressions and natural elements. This artistic exploration reflects his deep interest in new media and contributes to his reputation as an innovative visual artist. His approach is thoughtful and immersive, aiming to evoke emotion and provoke thought through every frame and interaction.</p>
             <p className='vt323 vt323-size'>Outside of his professional pursuits, Parsa is deeply engaged in a variety of creative hobbies. He is an avid painter and filmmaker, often found creating short films that showcase his diverse artistic abilities. Additionally, his love for <a className='vt323'>The Beatles</a> highlights his appreciation for classic influences that shape his modern creations. Currently working as a freelancer, Parsa continues to impact the digital and artistic landscapes, bringing a sophisticated blend of creativity and technical skill to every project he undertakes.</p>
-            <p className='vt323'>Please enjoy my favourite Fab Four while exploring my portfolio.</p>
+            <p className='vt323'>Please enjoy his favourite Fab Four while exploring.</p>
           </div>
-          <img className="selfImg" src={selfImg} alt="Description of myself" style={{ width: '200px', height: 'auto', borderRadius: '50%', margin: '20px' }} />
           {/* Spotify Embed */}
           <iframe
             style={{ border: 'none', borderRadius: '12px', width: '100%', height: '352px', marginTop: '20px' }}
