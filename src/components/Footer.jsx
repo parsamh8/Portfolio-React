@@ -4,7 +4,6 @@ export default function Footer () {
     return (
     <footer>
         <div className="footerInfo">
-        <a className="vt323" target="_blank" href="/" >Parsa McMoody</a>
             <a className="vt323" target="_blank" href="https://x.com/ParsaMh" >X</a>
             <a className="vt323"
                 href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
