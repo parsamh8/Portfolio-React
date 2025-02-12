@@ -1,30 +1,38 @@
-import Animated from "../components/Animated"
-import selfImg from "../assets/selfme.png"
+import Animated from "../components/Animated";
+import selfImg from "../assets/selfme.png";
 
 export default function About() {
-
   return (
     <>
       <Animated>
-        <div className="about-container">
-        <div style={{ padding: 40 }}>
-          <h1 className='vt323'> My Story</h1>
-          <p>With over five years of experience in the engineering industry and project coordination, I've honed my expertise in delivering technical solutions and managing complex projects. Recently, I've channeled this technical foundation into a growing passion for full-stack development, particularly in building scalable MERN applications. My background in problem-solving and process optimization seamlessly complements my interest in creating robust, user-centered web applications with a focus on intuitive UI and retro-inspired aesthetics. This unique blend of technical rigor and creative design fuels my drive to build modern solutions with character. </p>
-          <p>To deepen my knowledge and expand my skill set, I joined the University of Toronto's Full Stack Development program, running from September to December 2024. This program has provided hands-on experience with cutting-edge technologies, including MongoDB, Express.js, React, and Node.js, along with essential tools like Git, REST APIs, and deployment pipelines. Outside of work and study, I find inspiration in timeless music—I'm an avid fan of <span>The Beatles</span>—and enjoy the company of my cat, PJ, who adds a lively touch to my day. Balancing technical expertise and creative energy, I’m eager to apply my skills to dynamic projects and explore the boundless possibilities of web development.</p>
-          <button>
-            <a
-              href="/src/assets/resume.pdf"
-              download="resume.pdf"
-              style={{ textDecoration: 'none', color: 'inherit' }}
-            >
-              Download Resume
-            </a>
-          </button>
-        </div>
+        <div className="about-container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', padding: '40px' }}>
+          <div style={{ flexGrow: 1, minWidth: '60%', padding: '0 20px' }}>
+            <h1 className='vt323'>About</h1>
+            <p className='vt323 vt323-size'>Parsa (b. 1994, Tehran) is a multidisciplinary designer based in Toronto, whose expertise spans across web design, digital art installations, and live visual performances. A graduate of the University of Toronto’s Full Stack Software Development program, he is proficient in both MERN and PERN stack applications, crafting interfaces and experiences that are not only functional but artistically engaging. His work often draws upon retro-inspired aesthetics, merging them with cutting-edge digital techniques to create unique visual narratives.</p>
+            <p className='vt323 vt323-size'>His passion extends into the realm of VJing and video art, where he utilizes TouchDesigner to create compelling video visuals centered around facial expressions and natural elements. This artistic exploration reflects his deep interest in new media and contributes to his reputation as an innovative visual artist. His approach is thoughtful and immersive, aiming to evoke emotion and provoke thought through every frame and interaction.</p>
+            <p className='vt323 vt323-size'>Outside of his professional pursuits, Parsa is deeply engaged in a variety of creative hobbies. He is an avid painter and filmmaker, often found creating short films that showcase his diverse artistic abilities. Additionally, his love for <a className='vt323'>The Beatles</a> highlights his appreciation for classic influences that shape his modern creations. Currently working as a freelancer, Parsa continues to impact the digital and artistic landscapes, bringing a sophisticated blend of creativity and technical skill to every project he undertakes.</p>
+            <p className='vt323'>Please enjoy my favourite Fab Four while exploring my portfolio.</p>
+          </div>
+          <img className="selfImg" src={selfImg} alt="Description of myself" style={{ width: '200px', height: 'auto', borderRadius: '50%', margin: '20px' }} />
+          {/* Spotify Embed */}
+          <iframe
+            style={{ border: 'none', borderRadius: '12px', width: '100%', height: '352px', marginTop: '20px' }}
+            src="https://open.spotify.com/embed/track/00oZhqZIQfL9P5CjOP6JsO?utm_source=generator"
+            frameBorder="0"
+            allowFullScreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
+          ></iframe>
+                      <div>
+              <a
+                href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
+                className="email-vertical vt323"
+              >
+                parsamh8[at]gmail.com
+              </a>
+            </div>
         </div>
       </Animated>
-      <img className="selfImg" src={selfImg} alt="describtion of myself" />
     </>
-  )
-
+  );
 }

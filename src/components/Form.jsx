@@ -1,77 +1,77 @@
-import { validateEmail } from "../utils/helper"
 import { useState } from 'react';
 
 function Form() {
-
     const [email, setEmail] = useState('');
-    const [name, setUserName] = useState('');
-    const [message, themessage] = useState('');
+    const [userName, setUserName] = useState('');
+    const [message, setMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleInputChange = (e) => {
-        // Getting the value and name of the input which triggered the change
-        const { target } = e;
-        const inputType = target.name;
-        const inputValue = target.value;
-
-        if (inputType === 'email') {
-            setEmail(inputValue);
-        } else if (inputType === 'name') {
-            setUserName(inputValue);
+        const { name, value } = e.target;
+        if (name === 'email') {
+            setEmail(value);
+        } else if (name === 'userName') {
+            setUserName(value);
         } else {
-            themessage(inputValue);
+            setMessage(value);
         }
     };
+
     const handleFormSubmit = (e) => {
-        // Preventing the default behavior of the form submit (which is to refresh the page)
         e.preventDefault();
 
-        // First we check to see if the email is not valid or if the userName is empty. If so we set an error message to be displayed on the page.
-        if (!validateEmail(email) || !name) {
-            setErrorMessage(`Email or Name is invalid.`);
-            // We want to exit out of this code block if something is wrong so that the user can correct it
-            return;
-            // Then we check to see if the password is not valid. If so, we set an error message regarding the password.
-        }
+        // Prepare the form data to be sent
+        const formData = new FormData();
+        formData.append('access_key', '7fd63e3d-ec66-4bc4-ae1c-590dad675148'); // Replace 'your_access_key_here' with your actual access key from Web3Forms
+        formData.append('email', email);
+        formData.append('name', userName);
+        formData.append('message', message);
 
-        alert(`Parsa Will Contact You Soon`);
-
-        // If everything goes according to plan, we want to clear out the input after a successful registration.
-        setUserName('');
-        themessage('');
-        setEmail('');
-
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Thank you for your message. Parsa will contact you soon.');
+                setUserName('');
+                setMessage('');
+                setEmail('');
+            } else {
+                setErrorMessage('Failed to send message.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            setErrorMessage('Failed to send message.');
+        });
     };
 
     return (
         <div>
-            <div style={{ paddingLeft: 23 }} className="container text-center contact-me-form">
-                <div></div>
-                <form action="https://api.web3forms.com/submit" method="POST" className="form" onSubmit={handleFormSubmit}>
-                    <input type="hidden" name="access_key" value="7fd63e3d-ec66-4bc4-ae1c-590dad675148"/>
-
-                    <input
-                        value={name}
-                        name="name" required
-                        onChange={handleInputChange}
-                        type="text"
-                        placeholder="name"
-                    />
+            <div style={{paddingLeft: 23}} className="container text-center contact-me-form">
+                <form className="form" onSubmit={handleFormSubmit}>
                     <input
                         value={email}
-                        name="email" required
+                        name="email"
                         onChange={handleInputChange}
                         type="email"
                         placeholder="email"
                     />
+                    <input
+                        value={userName}
+                        name="userName"
+                        onChange={handleInputChange}
+                        type="text"
+                        placeholder="name"
+                    />
                     <textarea
                         value={message}
-                        name="message" required
+                        name="message"
                         onChange={handleInputChange}
-                        type="message"
                         placeholder="your message"
-                    ></textarea>
-                    <br/>
+                    /><br/>
                     <button type="submit">Submit</button>
                 </form>
                 {errorMessage && (
@@ -81,7 +81,7 @@ function Form() {
                 )}
             </div>
         </div>
-    )
+    );
 }
 
-export default Form
+export default Form;

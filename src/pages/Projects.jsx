@@ -18,6 +18,14 @@ export default function Projects() {
                                 })}
                         </div>
                     </div>
+                    <div>
+              <a
+                href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
+                className="email-vertical vt323"
+              >
+                parsamh8[at]gmail.com
+              </a>
+            </div>
                 </section>
             </Animated>
         </>

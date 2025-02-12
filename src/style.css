@@ -62,11 +62,9 @@ img {
   border-radius: 47%;
   display: flex;
   position: absolute;
-  top: 120px;
+  top: 100px;
   left: 50px;
   border: 20px #12f01d;
-
-
 }
 
 .nav-button {
@@ -175,7 +173,7 @@ h1 {
   margin-top: 200px;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  padding-left: 40px;
 }
 
 .project-card-container {
@@ -478,4 +476,8 @@ margin-top: 20vh;
   height: auto;
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
+}
+
+.vt323-size {
+  font-size: 1.5em;
 }

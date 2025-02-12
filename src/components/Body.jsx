@@ -112,9 +112,7 @@ export default function Body() {
               <h1 className="vt323" style={{ marginBottom: -35 }}>
                 Full Stack Web Developer
               </h1>
-              <h1 className="vt323" style={{ marginBottom: -35 }}>
-                And
-              </h1>
+
               <h1 className="vt323">
                 <span className="virtual-color vt323">Visual</span> Artist
               </h1>
