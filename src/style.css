@@ -120,19 +120,17 @@ footer {
   flex-wrap: nowrap;
   justify-content: space-around;
   width: 100%;
-  max-width: 800px;
+  max-width: 2000px;
 }
 
 .footerInfo a {
   color: var(--green);
   padding: 5px;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-style: normal;
   transition: all 0.25s ease-in;
   display: inline-block;
-  /* padding: 0 50px; */
-  /* padding: 0 100px; */
 }
 
 a {
@@ -479,5 +477,9 @@ margin-top: 20vh;
 }
 
 .vt323-size {
-  font-size: 1.5em;
+  font-size: 1.7em;
+}
+
+.vt323-size {
+  font-size: 1.6em;
 }

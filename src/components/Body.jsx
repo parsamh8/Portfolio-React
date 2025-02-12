@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import myImage from "../assets/me.gif";
 import Animated from "../components/Animated";
-import myball from "../assets/ball.gif";
+import myball from "../assets/tangerin.gif";
 
 export default function Body() {
   const [position, setPosition] = useState({ x: 100, y: 100 });
@@ -106,12 +106,12 @@ export default function Body() {
           <div className="homepage" style={{ padding: 35 }}>
             <div className="vt323">
               <h1 className="vt323">
-                Hi! I'm <span className="vt323">Parsa</span>
+                Hi! I'm <span className="vt323">Parsa McMoody</span>
               </h1>
               <h2 className="vt323">1994, Toronto based</h2>
               <h1 className="vt323" style={{ marginBottom: -35 }}>
                 Full Stack Web Developer
-              </h1>
+              and </h1>
 
               <h1 className="vt323">
                 <span className="virtual-color vt323">Visual</span> Artist
@@ -137,8 +137,8 @@ export default function Body() {
               onMouseDown={startDragging}
               onTouchStart={startDragging}
             >
-              <div className="move-instruction vt323" style={{ position: 'absolute', top: '-20px', width: '100%', textAlign: 'center', fontSize: '20px' , color: 'lightgreen' }}>
-                # Move me around
+              <div className="move-instruction vt323" style={{ position: 'absolute', top: '-20px', width: '100%', textAlign: 'center', fontSize: '20px' , color: 'orange' }}>
+                # Move the tangerine around
               </div>
               <img
                 src={myball}
