@@ -106,7 +106,7 @@ export default function Body() {
           <div className="homepage" style={{ padding: 35 }}>
             <div className="vt323">
               <h1 className="vt323">
-                Hi! I'm <span className="vt323">Parsa McMoody</span>
+                Hi! I'm Parsa McMoody
               </h1>
               <h2 className="vt323">1994, Toronto based</h2>
               <h1 className="vt323" style={{ marginBottom: -35 }}>
