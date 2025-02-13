@@ -4,7 +4,7 @@ import selfImg from "../assets/selfme.png";
 export default function About() {
   return (
     <>
-<img className="selfImg" src={selfImg} alt="Description of myself" style={{ width: '200px', height: 'auto', borderRadius: '50%', margin: '20px' }} />
+      <img className="selfImg" src={selfImg} alt="Description of myself" style={{ width: '200px', height: 'auto', borderRadius: '50%', margin: '20px' }} />
       <Animated>
         <div className="about-container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', padding: '20px' }}>
           <div style={{ flexGrow: 1, minWidth: '60%', padding: '0 40px', marginTop: '40px' }}>
@@ -16,21 +16,22 @@ export default function About() {
           </div>
           {/* Spotify Embed */}
           <iframe
-            style={{ border: 'none', borderRadius: '12px', width: '100%', height: '352px', marginTop: '20px' }}
+            style={{ border: 'none', borderRadius: '12px', width: '50%', height: '352px', marginTop: '20px', marginLeft: '40px' }}
             src="https://open.spotify.com/embed/track/00oZhqZIQfL9P5CjOP6JsO?utm_source=generator"
             frameBorder="0"
             allowFullScreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
             loading="lazy"
           ></iframe>
-                      <div>
-              <a
-                href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
-                className="email-vertical vt323"
-              >
-                parsamh8[at]gmail.com
-              </a>
-            </div>
+
+          <div>
+            <a
+              href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
+              className="email-vertical vt323"
+            >
+              parsamh8[at]gmail.com
+            </a>
+          </div>
         </div>
       </Animated>
     </>

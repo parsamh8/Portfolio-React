@@ -48,14 +48,6 @@ img {
   top: 150px;
 }
 
-.img-portfolio {
-  position: absolute;
-  width: 300px;
-  height: auto;
-  display: block;
-  
-}
-
 .selfImg {
   width: 160px;
   height: 150px;
@@ -317,21 +309,15 @@ textarea {
     top: -250px;
   }
 
-  .img-portfolio {
-    position: absolute;
-    flex-direction: row;
-    left: 65px;
-    top: 70px;
-  }
-
   .homepage {
     margin-top: 100px;
   }
 
   .contact-me {
     position: absolute;
-    top: 310px;
+    top: 10px;
     left: 65px;
+    margin-top: 1vh;
   }
 
   .project-header  {
@@ -347,7 +333,7 @@ textarea {
 
   .contact-me-form {
     position: absolute;
-    top: 430px;
+    top: 330px;
   }
 
   /* .animated-container{
