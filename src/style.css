@@ -503,7 +503,6 @@ margin-top: 20vh;
 .nav-container {
   position: relative;
   z-index: 11000; 
-  background-color: white;
   width: 100%;
   padding: 10px 0;
 }
