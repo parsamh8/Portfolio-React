@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import myImage from "../assets/me.gif";
 import Animated from "../components/Animated";
 import myball from "../assets/tangerin.gif";
 
@@ -26,7 +25,6 @@ export default function Body() {
     if (imageRef.current) {
       setPosition(getRandomPosition());
     }
-    // Optionally, update position on window resize.
     const handleResize = () => {
       if (imageRef.current) {
         setPosition(getRandomPosition());
@@ -52,7 +50,7 @@ export default function Body() {
 
     function handleTouchMove(e) {
       if (!isDragging || !e.touches[0]) return;
-      e.preventDefault(); // Prevents scrolling while dragging.
+      e.preventDefault();
       const touch = e.touches[0];
       let newX = touch.clientX - offset.x;
       let newY = touch.clientY - offset.y;
@@ -93,65 +91,175 @@ export default function Body() {
   };
 
   return (
-    <div className="body-container">
-      <div className="img-parent-container">
-        <img
-          className="img-container"
-          src={myImage}
-          alt="description of myself"
-        />
-      </div>
-      <div className="animated-container">
-        <Animated>
-          <div className="homepage" style={{ padding: 35 }}>
-            <div className="vt323">
-              <h1 className="vt323">
-                Hi! I'm Parsa McMoody
-              </h1>
-              <h2 className="vt323">1994, Toronto based</h2>
-              <h1 className="vt323" style={{ marginBottom: -35 }}>
-                Full Stack Web Developer
-              and </h1>
+    <div className="body-container" style={{ marginLeft: "250px" }}>
+      {/* Inline styles including media queries for responsiveness */}
+      <style>{`
+        @keyframes slideDown {
+          from { transform: translateY(-100%); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes appear {
+          from {
+            opacity: 0;
+            transform: translate(var(--x, 0px), var(--y, 0px)) rotate(var(--angle, 0deg));
+          }
+          to {
+            opacity: 1;
+            transform: translate(0px, 0px) rotate(0deg);
+          }
+        }
+        .appear {
+          opacity: 0;
+          animation: appear 1s forwards;
+        }
+        /* For screens up to 600px, reduce sidebar width and adjust margin */
+        @media (max-width: 600px) {
+          .body-container {
+            margin-left: 200px !important;
+          }
+        }
+        /* For very small screens (max-width: 435px), make the blue sidebar very tiny */
+        @media (max-width: 435px) {
+          .left-sidebar {
+            width: 80px !important;
+          }
+          .body-container {
+            margin-left: 80px !important;
+          }
+          .left-sidebar.vt323 {
+            font-size: 1.5rem !important;
+          }
+        }
+      `}</style>
 
-              <h1 className="vt323">
-                <span className="virtual-color vt323">Visual</span> Artist
-              </h1>
-              <h2 className="vt323">Welcome To My Portfolio</h2>
-            </div>
-            <div>
-              <a
-                href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
-                className="email-vertical vt323"
-              >
-                parsamh8[at]gmail.com
-              </a>
-            </div>
-            <div
+      {/* Main animated content */}
+      <div className="animated-container">
+        <div className="homepage" style={{ padding: 35 }}>
+          <div className="vt323">
+            <h1
+              className="vt323 appear"
               style={{
-                position: "fixed",
-                left: `${position.x}px`,
-                top: `${position.y}px`,
-                zIndex: 9999,
+                animationDelay: "0s",
+                "--x": "-50px",
+                "--y": "-20px",
+                "--angle": "20deg",
               }}
-              className="moving-image-container"
-              onMouseDown={startDragging}
-              onTouchStart={startDragging}
             >
-              <div className="move-instruction vt323" style={{ position: 'absolute', top: '-20px', width: '100%', textAlign: 'center', fontSize: '20px' , color: 'orange' }}>
-                # Move the tangerine around
-              </div>
-              <img
-                src={myball}
-                alt="Draggable Ball"
-                ref={imageRef}
-                style={{
-                  width: '150px', // Adjusted size
-                  height: 'auto' // Maintain aspect ratio
-                }}
-              />
-            </div>
+              Hi! I'm Parsa McMoody
+            </h1>
+            <h2
+              className="vt323 appear"
+              style={{
+                animationDelay: "0.5s",
+                "--x": "50px",
+                "--y": "20px",
+                "--angle": "-10deg",
+              }}
+            >
+              1994, Toronto based
+            </h2>
+            <h1
+              className="vt323 appear"
+              style={{
+                animationDelay: "1s",
+                "--x": "-50px",
+                "--y": "20px",
+                "--angle": "15deg",
+                marginBottom: -35,
+              }}
+            >
+              Full Stack Web Developer and
+            </h1>
+            <h1
+              className="vt323 appear"
+              style={{
+                animationDelay: "1.5s",
+                "--x": "50px",
+                "--y": "-20px",
+                "--angle": "-20deg",
+              }}
+            >
+              <span className="virtual-color vt323">Visual</span> Artist
+            </h1>
+            <h2
+              className="vt323 appear"
+              style={{
+                animationDelay: "2s",
+                "--x": "0px",
+                "--y": "50px",
+                "--angle": "30deg",
+              }}
+            >
+              Welcome To My Portfolio
+            </h2>
           </div>
-        </Animated>
+          <div>
+            <a
+              href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
+              className="email-vertical vt323"
+            >
+              parsamh8[at]gmail.com
+            </a>
+          </div>
+          <div
+            style={{
+              position: "fixed",
+              left: `${position.x}px`,
+              top: `${position.y}px`,
+              zIndex: 9999,
+            }}
+            className="moving-image-container"
+            onMouseDown={startDragging}
+            onTouchStart={startDragging}
+          >
+            <div
+              className="move-instruction vt323"
+              style={{
+                position: "absolute",
+                top: "-20px",
+                width: "100%",
+                textAlign: "center",
+                fontSize: "20px",
+                color: "orange",
+              }}
+            >
+              # Move the tangerine around
+            </div>
+            <img
+              src={myball}
+              alt="Draggable Ball"
+              ref={imageRef}
+              style={{
+                width: "150px",
+                height: "auto",
+              }}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Fixed left sidebar with vertical sliding text */}
+      <div
+        className="left-sidebar vt323"
+        style={{
+          position: "fixed",
+          left: 0,
+          top: 0,
+          height: "100vh",
+          width: "150px",
+          backgroundColor: "blue",
+          color: "black",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 10000,
+          writingMode: "vertical-rl",
+          textOrientation: "upright",
+          fontSize: "3rem",
+          animation: "slideDown 3s ease-out forwards",
+        }}
+      >
+        PARSA MCMOODY
       </div>
     </div>
   );

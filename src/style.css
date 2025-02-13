@@ -95,35 +95,68 @@ img {
 footer {
   width: 100%;
   text-align: center;
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* position: fixed; */
-  bottom: 0;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  /* Remove duplicate display and width declarations */
 }
 
+.footerMarquee {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  font-size: 2rem;
+}
+
+/* The container holds two copies (200% width) */
 .footerInfo {
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 2000px;
+  width: 200%;
+  animation: scroll 20s linear infinite;
 }
 
-.footerInfo a {
-  color: var(--green);
-  padding: 5px;
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-style: normal;
-  transition: all 0.25s ease-in;
-  display: inline-block;
+/* Each copy occupies 50% (i.e. one viewport width) */
+.marquee-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem; /* Adjust spacing as needed */
+  width: 50%;
+  white-space: nowrap;
 }
+
+/* Ensure inline elements stay on one line */
+.footerInfo a,
+.footerInfo p {
+  display: inline-block;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Animate from 0 to -50% for a seamless transition */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .marquee-content {
+    gap: 1rem;
+  }
+  .footerInfo a,
+  .footerInfo p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
 
 a {
   font-weight: 500;
@@ -464,4 +497,41 @@ margin-top: 20vh;
 
 .vt323-size {
   font-size: 1.4em;
+}
+
+/* Default desktop styles */
+.nav-container {
+  position: relative;
+  z-index: 11000; 
+  background-color: white;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0 20px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  .nav-container {
+    position: fixed; /* fix nav to top */
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .nav-list {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 }

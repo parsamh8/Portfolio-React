@@ -1,0 +1,106 @@
+/* Base sidebar styling */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background-color: blue;
+  color: black;
+  overflow: hidden;
+  transition: width 0.5s ease, transform 0.5s ease;
+  z-index: 10000;
+}
+
+/* Collapsed state: fixed width (250px) with no horizontal translation */
+.sidebar.collapsed {
+  width: 250px;
+  transform: translateX(0);
+}
+
+/* Expanded state: takes 75vw and slides to the right so that the left part remains in view */
+.sidebar.expanded {
+  width: 75vw;
+  transform: translateX(calc(75vw - 250px));
+}
+
+/* Content container */
+.sidebar-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+
+/* Collapsed content: vertical name with arrow */
+.collapsed-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-name {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+/* Toggle arrow styling */
+.toggle-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Expanded content: centered Lorem text with arrow to collapse */
+.expanded-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.lorem-text {
+  font-size: 2rem;
+}
+
+/* Adjust the toggle arrow in the expanded state to the left side of the expanded content */
+.expanded-content .toggle-arrow {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px 0 0 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .sidebar.collapsed {
+    width: 200px;
+  }
+  .sidebar.expanded {
+    width: 80vw;
+    transform: translateX(calc(80vw - 200px));
+  }
+  .vertical-name {
+    font-size: 2rem;
+  }
+  .lorem-text {
+    font-size: 1.5rem;
+  }
+  .toggle-arrow {
+    font-size: 1.5rem;
+  }
+}
