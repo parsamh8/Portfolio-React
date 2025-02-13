@@ -6,66 +6,52 @@ export default function Body() {
   const [position, setPosition] = useState({ x: 100, y: 100 });
   const [isDragging, setIsDragging] = useState(false);
   const [offset, setOffset] = useState({ x: 0, y: 0 });
-  const imageRef = useRef(null);
+  const containerRef = useRef(null);
 
-  // Compute a random position ensuring the ball stays fully visible.
-  const getRandomPosition = () => {
-    const ballWidth = imageRef.current ? imageRef.current.offsetWidth : 100;
-    const ballHeight = imageRef.current ? imageRef.current.offsetHeight : 100;
-    const maxX = window.innerWidth - ballWidth;
-    const maxY = window.innerHeight - ballHeight;
-    return {
-      x: Math.random() * maxX,
-      y: Math.random() * maxY,
-    };
-  };
-
-  // Set an initial random position once the image is rendered.
+  // Set a random initial position once on mount
   useEffect(() => {
-    if (imageRef.current) {
-      setPosition(getRandomPosition());
+    if (containerRef.current) {
+      const ballWidth = containerRef.current.offsetWidth;
+      const ballHeight = containerRef.current.offsetHeight;
+      const maxX = window.innerWidth - ballWidth;
+      const maxY = window.innerHeight - ballHeight;
+      const randomX = Math.random() * maxX;
+      const randomY = Math.random() * maxY;
+      setPosition({ x: randomX, y: randomY });
     }
-    const handleResize = () => {
-      if (imageRef.current) {
-        setPosition(getRandomPosition());
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Mouse and touch move events
   useEffect(() => {
-    function handleMouseMove(e) {
+    const handleMouseMove = (e) => {
       if (!isDragging) return;
       let newX = e.clientX - offset.x;
       let newY = e.clientY - offset.y;
-      if (imageRef.current) {
-        const imgWidth = imageRef.current.offsetWidth;
-        const imgHeight = imageRef.current.offsetHeight;
-        newX = Math.max(0, Math.min(newX, window.innerWidth - imgWidth));
-        newY = Math.max(0, Math.min(newY, window.innerHeight - imgHeight));
+      if (containerRef.current) {
+        const { width, height } = containerRef.current.getBoundingClientRect();
+        newX = Math.max(0, Math.min(newX, window.innerWidth - width));
+        newY = Math.max(0, Math.min(newY, window.innerHeight - height));
       }
       setPosition({ x: newX, y: newY });
-    }
+    };
 
-    function handleTouchMove(e) {
+    const handleTouchMove = (e) => {
       if (!isDragging || !e.touches[0]) return;
       e.preventDefault();
       const touch = e.touches[0];
       let newX = touch.clientX - offset.x;
       let newY = touch.clientY - offset.y;
-      if (imageRef.current) {
-        const imgWidth = imageRef.current.offsetWidth;
-        const imgHeight = imageRef.current.offsetHeight;
-        newX = Math.max(0, Math.min(newX, window.innerWidth - imgWidth));
-        newY = Math.max(0, Math.min(newY, window.innerHeight - imgHeight));
+      if (containerRef.current) {
+        const { width, height } = containerRef.current.getBoundingClientRect();
+        newX = Math.max(0, Math.min(newX, window.innerWidth - width));
+        newY = Math.max(0, Math.min(newY, window.innerHeight - height));
       }
       setPosition({ x: newX, y: newY });
-    }
+    };
 
-    function stopDragging() {
+    const stopDragging = () => {
       setIsDragging(false);
-    }
+    };
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", stopDragging);
@@ -80,6 +66,7 @@ export default function Body() {
     };
   }, [isDragging, offset]);
 
+  // Start dragging on mouse down or touch start
   const startDragging = (event) => {
     event.preventDefault();
     const { clientX, clientY } = event.touches ? event.touches[0] : event;
@@ -92,7 +79,7 @@ export default function Body() {
 
   return (
     <div className="body-container" style={{ marginLeft: "250px" }}>
-      {/* Inline styles including media queries for responsiveness */}
+      {/* Inline styles including keyframes and media queries */}
       <style>{`
         @keyframes slideDown {
           from { transform: translateY(-100%); opacity: 0; }
@@ -112,13 +99,11 @@ export default function Body() {
           opacity: 0;
           animation: appear 1s forwards;
         }
-        /* For screens up to 600px, reduce sidebar width and adjust margin */
         @media (max-width: 600px) {
           .body-container {
             margin-left: 200px !important;
           }
         }
-        /* For very small screens (max-width: 435px), make the blue sidebar very tiny */
         @media (max-width: 435px) {
           .left-sidebar {
             width: 80px !important;
@@ -201,12 +186,16 @@ export default function Body() {
               parsamh8[at]gmail.com
             </a>
           </div>
+          {/* Draggable ball container */}
           <div
+            ref={containerRef}
             style={{
               position: "fixed",
               left: `${position.x}px`,
               top: `${position.y}px`,
               zIndex: 9999,
+              touchAction: "none",
+              cursor: isDragging ? "grabbing" : "grab",
             }}
             className="moving-image-container"
             onMouseDown={startDragging}
@@ -228,7 +217,6 @@ export default function Body() {
             <img
               src={myball}
               alt="Draggable Ball"
-              ref={imageRef}
               style={{
                 width: "150px",
                 height: "auto",

@@ -6,7 +6,7 @@ export default function Footer() {
           {/* Duplicate the content for a continuous flow */}
           <div className="marquee-content">
             <p className="vt323">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Lorem ipsum dolor.
             </p>
             <a
               className="vt323"
@@ -15,7 +15,7 @@ export default function Footer() {
               parsamh8[at]gmail.com
             </a>
             <p className="vt323">
-              Lorem ipsum dolor sit amet consectetur
+              Lorem ipsum dolor.
             </p>
           </div>
           <div className="marquee-content">
@@ -26,8 +26,7 @@ export default function Footer() {
               parsamh8[at]gmail.com
             </a>
             <p className="vt323">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni
-              aliquid debitis eligendi reprehenderit dolor officiis
+              Lorem ipsum dolor.
             </p>
             <a
               className="vt323"
