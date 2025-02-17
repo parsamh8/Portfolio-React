@@ -130,7 +130,7 @@ export default function Body() {
                 "--angle": "20deg",
               }}
             >
-              Hi! I'm Parsa McMoody
+              Hi! I'm Parsa
             </h1>
             <h2
               className="vt323 appear"

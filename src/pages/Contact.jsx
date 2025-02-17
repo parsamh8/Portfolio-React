@@ -107,7 +107,6 @@ export default function Contact() {
 
   return (
     <>
-      <Animated>
         <div className="contact-me">
           <h1 className="vt323" style={{ padding: 40 }}>
             Contact Me
@@ -155,7 +154,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </Animated>
       <div>
         <a
           href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
