@@ -36,6 +36,9 @@ export default function Footer() {
             >
               Twitter
             </a>
+            <p className="vt323">
+              Lorem ipsum dolor.
+            </p>
           </div>
         </div>
       </div>

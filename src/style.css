@@ -49,14 +49,25 @@ img {
 }
 
 .selfImg {
-  width: 160px;
-  height: 150px;
-  border-radius: 47%;
   display: flex;
   position: absolute;
-  top: 100px;
-  left: 50px;
+  top: 350px;
+  right: 200px;
   border: 20px #12f01d;
+  width: 400px;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+.selfImg2 {
+  display: flex;
+  position: absolute;
+  top: 798px;
+  right: 200px;
+  border: 20px #12f01d;
+  width: 400px;
+  height: auto;
+  filter: grayscale(100%);
 }
 
 .nav-button {
@@ -153,6 +164,27 @@ footer {
   .footerInfo p {
     font-size: 0.9rem;
   }
+  .selfImg {
+    display: flex;
+    position: absolute;
+    top: 350px;
+    right: 200px;
+    border: 20px #12f01d;
+    width: 400px;
+    height: auto;
+    filter: grayscale(100%);
+  }
+  
+  .selfImg2 {
+    display: flex;
+    position: absolute;
+    top: 798px;
+    right: 200px;
+    border: 20px #12f01d;
+    width: 400px;
+    height: auto;
+    filter: grayscale(100%);
+  }
 }
 
 
@@ -193,7 +225,7 @@ h1 {
 }
 
 .project-header {
-  margin-top: 200px;
+  margin-top: 100px;
   justify-content: center;
   align-items: center;
   padding-left: 40px;
@@ -429,7 +461,9 @@ margin-top: 20vh;
 }
 
 .about-container {
-  margin-top: 25vh;
+  padding-left: 40px;
+  font-size: 1.5rem;
+  margin-right: 700px;
 }
 
 .virtual-color {
@@ -528,9 +562,50 @@ margin-top: 20vh;
     left: 0;
     width: 100%;
   }
+
   .nav-list {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+  }
+
+  .about-container {
+    margin-right: 0;
+    font-size: 1rem;
+    margin-top: 15rem;
+  }
+
+  .selfImg2 {
+    display: flex;
+    position: absolute;
+    top: 150px;
+    right: 250px;
+    width: 150px;
+    height: auto;
+    filter: grayscale(100%);
+  }
+  
+  .selfImg {
+    display: flex;
+    position: absolute;
+    top: 150px;
+    left: 200px;
+    width: 168px;
+    height: auto;
+    filter: grayscale(100%);
+  }
+
+  .about-paragraph {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .about-media {
+    margin-left: -20px; 
+  }
+
+  .about-left-margin {
+    margin-left: 0px;
+    filter: grayscale(100%);
   }
 }
