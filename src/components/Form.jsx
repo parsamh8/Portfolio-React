@@ -58,6 +58,7 @@ function Form() {
                         onChange={handleInputChange}
                         type="email"
                         placeholder="email"
+                        required
                     />
                     <input
                         value={userName}
@@ -65,12 +66,14 @@ function Form() {
                         onChange={handleInputChange}
                         type="text"
                         placeholder="name"
+                        required 
                     />
                     <textarea
                         value={message}
                         name="message"
                         onChange={handleInputChange}
                         placeholder="your message"
+                        required
                     /><br/>
                     <button type="submit">Submit</button>
                 </form>
