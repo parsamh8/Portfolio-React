@@ -19,13 +19,9 @@ export default function About() {
           {/* Spotify Embed */}
           <iframe
             style={{ border: 'none', borderRadius: '12px', width: '76%', height: '352px', marginTop: '20px', marginLeft: '40px' }}
-            src="https://open.spotify.com/embed/track/00oZhqZIQfL9P5CjOP6JsO?utm_source=generator"
-            frameBorder="0"
-            allowFullScreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-            loading="lazy"
+            src="https://open.spotify.com/embed/track/2B4Y9u4ERAFiMo13XPJyGP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"
           ></iframe>
-                      <div>
+            <div>
               <a
                 href="mailto:parsamh8@gmail.com?subject=Friend Inquiries&body=How can I help you, my friend?"
                 className="email-vertical vt323"
