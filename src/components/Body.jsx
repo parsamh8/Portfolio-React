@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import Animated from "../components/Animated";
 import myball from "../assets/tangerin.gif";
 
 export default function Body() {
@@ -8,7 +7,7 @@ export default function Body() {
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
 
-  // Set a random initial position once on mount
+  // Set a random initial position for the draggable ball on mount
   useEffect(() => {
     if (containerRef.current) {
       const ballWidth = containerRef.current.offsetWidth;
@@ -21,7 +20,7 @@ export default function Body() {
     }
   }, []);
 
-  // Mouse and touch move events
+  // Mouse and touch move events for dragging the ball
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!isDragging) return;
@@ -49,9 +48,7 @@ export default function Body() {
       setPosition({ x: newX, y: newY });
     };
 
-    const stopDragging = () => {
-      setIsDragging(false);
-    };
+    const stopDragging = () => setIsDragging(false);
 
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", stopDragging);
@@ -66,7 +63,6 @@ export default function Body() {
     };
   }, [isDragging, offset]);
 
-  // Start dragging on mouse down or touch start
   const startDragging = (event) => {
     event.preventDefault();
     const { clientX, clientY } = event.touches ? event.touches[0] : event;
@@ -79,102 +75,154 @@ export default function Body() {
 
   return (
     <div className="body-container" style={{ marginLeft: "250px" }}>
-      {/* Inline styles including keyframes and media queries */}
+      {/* Inline styles for keyframes, media queries, and background styling */}
       <style>{`
         @keyframes slideDown {
           from { transform: translateY(-100%); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
+          to   { transform: translateY(0); opacity: 1; }
         }
         @keyframes appear {
-          from {
-            opacity: 0;
-            transform: translate(var(--x, 0px), var(--y, 0px)) rotate(var(--angle, 0deg));
-          }
-          to {
-            opacity: 1;
-            transform: translate(0px, 0px) rotate(0deg);
-          }
+          from { opacity: 0; transform: translate(var(--x, 0px), var(--y, 0px)); }
+          to   { opacity: 1; transform: translate(0, 0); }
         }
-        .appear {
-          opacity: 0;
-          animation: appear 1s forwards;
+        .appear { opacity: 0; animation: appear 1s forwards; }
+
+        /* Default styles for background elements */
+        .background-huge-image {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: -1; /* Sun appears above the moons */
+          pointer-events: none;
         }
-        @media (max-width: 600px) {
-          .body-container {
-            margin-left: 200px !important;
-          }
+        .background-huge-image img {
+          width: 30vw;
+          height: auto;
         }
+
+        .background-3d-circle {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          /* Orbit center aligned with sun center */
+          transform: translate(-50%, -50%);
+          width: 60vw;
+          height: 60vw;
+          perspective: 1000px;
+          z-index: -2;
+          pointer-events: none;
+        }
+        .background-3d-circle .circle {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          transform-style: preserve-3d;
+          animation: rotateCircle 30s linear infinite;
+        }
+        .background-3d-circle .circle img {
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+        /* Arrange 6 images at 60° increments.
+           Using translateZ(25vw) positions them in an orbit.
+           A gap is ensured by the chosen orbit radius. */
+        .background-3d-circle .circle img:nth-child(1) {
+          transform: rotateY(0deg) translateZ(25vw);
+        }
+        .background-3d-circle .circle img:nth-child(2) {
+          transform: rotateY(60deg) translateZ(25vw);
+        }
+        .background-3d-circle .circle img:nth-child(3) {
+          transform: rotateY(120deg) translateZ(25vw);
+        }
+        .background-3d-circle .circle img:nth-child(4) {
+          transform: rotateY(180deg) translateZ(25vw);
+        }
+        .background-3d-circle .circle img:nth-child(5) {
+          transform: rotateY(240deg) translateZ(25vw);
+        }
+        .background-3d-circle .circle img:nth-child(6) {
+          transform: rotateY(300deg) translateZ(25vw);
+        }
+        @keyframes rotateCircle {
+          from { transform: rotateY(0deg); }
+          to   { transform: rotateY(360deg); }
+        }
+
+        /* Mobile Responsive Adjustments */
         @media (max-width: 435px) {
-          .left-sidebar {
-            width: 80px !important;
+          .background-huge-image img {
+            width: 70vw;
           }
-          .body-container {
-            margin-left: 80px !important;
+          .background-3d-circle {
+            width: 100vw;
+            height: 100vw;
+            transform: translate(-50%, -50%);
           }
-          .left-sidebar.vt323 {
-            font-size: 1.5rem !important;
+          .background-3d-circle .circle img {
+            width: 100px;
+            height: 100px;
+          }
+          /* Increase orbit radius on mobile for more gap between moons */
+          .background-3d-circle .circle img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(35vw);
+          }
+          .background-3d-circle .circle img:nth-child(2) {
+            transform: rotateY(60deg) translateZ(35vw);
+          }
+          .background-3d-circle .circle img:nth-child(3) {
+            transform: rotateY(120deg) translateZ(35vw);
+          }
+          .background-3d-circle .circle img:nth-child(4) {
+            transform: rotateY(180deg) translateZ(35vw);
+          }
+          .background-3d-circle .circle img:nth-child(5) {
+            transform: rotateY(240deg) translateZ(35vw);
+          }
+          .background-3d-circle .circle img:nth-child(6) {
+            transform: rotateY(300deg) translateZ(35vw);
           }
         }
       `}</style>
 
-      {/* Main animated content */}
+      {/* Huge Central Image ("Sun") */}
+      <div className="background-huge-image">
+        <img src="https://i.pinimg.com/originals/bd/97/f6/bd97f61512d1186afa3f6248459f3464.gif" alt="Sun" />
+      </div>
+
+      {/* 3D Rotating Orbit for 6 Images ("Moons") */}
+      <div className="background-3d-circle">
+      <div className="circle">
+          <img src="https://i.pinimg.com/originals/bb/fd/13/bbfd139b1304358dd4314364736e163d.gif" alt="Moon 3" />
+          <img src="https://i.pinimg.com/originals/f8/14/2b/f8142bffe3187da55068c97ed506eb89.gif" alt="Moon 4" />
+          <img src="https://i.pinimg.com/originals/21/aa/94/21aa943777317197141a3364ddac1b3d.gif" alt="Moon 5" />
+          <img src="https://i.pinimg.com/originals/45/b4/4b/45b44bd9415bb4ef57a1178596f10c45.gif" alt="Moon 6" />
+          <img src="https://i.pinimg.com/originals/9c/ce/59/9cce59937f480fa5948f59cf6eed4a4b.gif" alt="Moon 7" />
+          <img src="https://i.pinimg.com/originals/b3/e8/cd/b3e8cd07849c04d103bf9d63b4cec374.gif" alt="Moon 8" />
+        </div>
+      </div>
+
+      {/* Main Animated Content */}
       <div className="animated-container">
         <div className="homepage" style={{ padding: 35 }}>
           <div className="vt323">
-            <h1
-              className="vt323 appear"
-              style={{
-                animationDelay: "0s",
-                "--x": "-50px",
-                "--y": "-20px",
-                "--angle": "20deg",
-              }}
-            >
+            <h1 className="vt323 appear" style={{ animationDelay: "0s", "--x": "-50px", "--y": "-20px" }}>
               Hi! I'm Parsa
             </h1>
-            <h2
-              className="vt323 appear"
-              style={{
-                animationDelay: "0.5s",
-                "--x": "50px",
-                "--y": "20px",
-                "--angle": "-10deg",
-              }}
-            >
+            <h2 className="vt323 appear" style={{ animationDelay: "0.5s", "--x": "50px", "--y": "20px" }}>
               1994, Toronto based
             </h2>
-            <h1
-              className="vt323 appear"
-              style={{
-                animationDelay: "1s",
-                "--x": "-50px",
-                "--y": "20px",
-                "--angle": "15deg",
-                marginBottom: -35,
-              }}
-            >
+            <h1 className="vt323 appear" style={{ animationDelay: "1s", "--x": "-50px", "--y": "20px", marginBottom: -35 }}>
               Full Stack Web Developer and
             </h1>
-            <h1
-              className="vt323 appear"
-              style={{
-                animationDelay: "1.5s",
-                "--x": "50px",
-                "--y": "-20px",
-                "--angle": "-20deg",
-              }}
-            >
-              <span className="virtual-color vt323">Visual</span> Artist
+            <h1 className="vt323 appear" style={{ animationDelay: "1.5s", "--x": "50px", "--y": "-20px" }}>
+              <span className="virtual-color vt323">Multidisciplinary </span> Artist
             </h1>
-            <h2
-              className="vt323 appear"
-              style={{
-                animationDelay: "2s",
-                "--x": "0px",
-                "--y": "50px",
-                "--angle": "30deg",
-              }}
-            >
+            <h2 className="vt323 appear" style={{ animationDelay: "2s", "--x": "0px", "--y": "50px" }}>
               Welcome To My Portfolio
             </h2>
           </div>
@@ -186,7 +234,7 @@ export default function Body() {
               parsamh8[at]gmail.com
             </a>
           </div>
-          {/* Draggable ball container */}
+          {/* Draggable Ball Container */}
           <div
             ref={containerRef}
             style={{
@@ -217,16 +265,13 @@ export default function Body() {
             <img
               src={myball}
               alt="Draggable Ball"
-              style={{
-                width: "150px",
-                height: "auto",
-              }}
+              style={{ width: "150px", height: "auto" }}
             />
           </div>
         </div>
       </div>
 
-      {/* Fixed left sidebar with vertical sliding text */}
+      {/* Fixed Left Sidebar with Vertical Sliding Text */}
       <div
         className="left-sidebar vt323"
         style={{
@@ -243,11 +288,11 @@ export default function Body() {
           zIndex: 10000,
           writingMode: "vertical-rl",
           textOrientation: "upright",
-          fontSize: "3rem",
+          fontSize: "3.5rem",
           animation: "slideDown 3s ease-out forwards",
         }}
       >
-        PARSA MCMOODY
+        پ ARSA م‌ CMOODY
       </div>
     </div>
   );

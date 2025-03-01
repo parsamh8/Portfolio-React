@@ -1,6 +1,4 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
-import Animated from "../components/Animated";
-import ContactMe from "../assets/ball.gif";
 import Form from "../components/Form";
 
 export default function Contact() {
@@ -111,48 +109,6 @@ export default function Contact() {
           <h1 className="vt323" style={{ padding: 40 }}>
             Contact Me
           </h1>
-        </div>
-        <div>
-          {/* Draggable Container */}
-          <div
-            ref={containerRef}
-            style={{
-              position: 'fixed',
-              left: `${position.x}px`,
-              top: `${position.y}px`,
-              width: `${containerWidth}px`,
-              maxWidth: '90vw', // ensures responsiveness on mobile devices
-              cursor: dragging ? 'grabbing' : 'grab',
-              touchAction: 'none', // disable default touch actions
-              zIndex: 1000,
-            }}
-            onMouseDown={handleMouseDown}
-            onTouchStart={handleTouchStart}
-          >
-            {/* Image */}
-            <img
-              src={ContactMe}
-              alt="Contact Me parsamh yellow image"
-              style={{
-                width: '100%',
-                display: 'block',
-              }}
-            />
-            {/* Text overlay */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '-40px',
-                width: '100%',
-                textAlign: 'center',
-                fontSize: '20px',
-              }}
-            >
-              <p className="vt323" style={{ textAlign: 'center', color: 'lightgreen' }}>
-                # Currently accepting inquiries
-              </p>
-            </div>
-          </div>
         </div>
       <div>
         <a
