@@ -364,7 +364,7 @@ textarea {
   body {
     font-size: 14px;
     margin: 10px;
-    margin-top: 4rem;
+    margin-top:-9rem;
   }
 
   .img-container {
@@ -608,4 +608,8 @@ margin-top: 20vh;
     margin-left: 0px;
     filter: grayscale(100%);
   }
+}
+
+.body-margin {
+  margin-left: 150px;
 }

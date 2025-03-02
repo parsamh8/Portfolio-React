@@ -74,7 +74,7 @@ export default function Body() {
   };
 
   return (
-    <div className="body-container" style={{ marginLeft: "250px" }}>
+    <div className="body-container body-margin ">
       {/* Inline styles for keyframes, media queries, and background styling */}
       <style>{`
         @keyframes slideDown {
@@ -220,7 +220,7 @@ export default function Body() {
               Full Stack Web Developer and
             </h1>
             <h1 className="vt323 appear" style={{ animationDelay: "1.5s", "--x": "50px", "--y": "-20px" }}>
-              <span className="virtual-color vt323">Multidisciplinary </span> Artist
+              <span className="virtual-color vt323">Digital </span>Artist
             </h1>
             <h2 className="vt323 appear" style={{ animationDelay: "2s", "--x": "0px", "--y": "50px" }}>
               Welcome To My Portfolio
@@ -279,7 +279,7 @@ export default function Body() {
           left: 0,
           top: 0,
           height: "100vh",
-          width: "150px",
+          width: "80px",
           backgroundColor: "blue",
           color: "black",
           display: "flex",
@@ -292,7 +292,7 @@ export default function Body() {
           animation: "slideDown 3s ease-out forwards",
         }}
       >
-        پ ARSA م‌ CMOODY
+        پARSA م‌CMOODY
       </div>
     </div>
   );
