@@ -401,10 +401,10 @@ textarea {
     top: 330px;
   }
 
-  /* .animated-container{
-    position: absolute;
-    top: 30px;
-  } */
+  .about-media {
+    margin-top: 14rem; 
+  }
+
   .grid-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr); /* 12 equal columns */
