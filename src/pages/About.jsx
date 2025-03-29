@@ -1,12 +1,12 @@
 import Animated from "../components/Animated";
 import selfImg from "../assets/selfme.png";
-import torontoUnderground from "../assets/toronto-underground.jpg";
+import the5th from "../assets/5th-beatles.jpg";
 
 export default function About() {
   return (
     <>
 <img className="selfImg about-left-margin" src={selfImg} alt="Description of myself"/>
-<img className="selfImg2 about-left-margin hide-on-mobile" src={torontoUnderground} alt="Description of myself" />
+<img className="selfImg2 about-left-margin hide-on-mobile" src={the5th} alt="Description of myself" />
       <Animated>
         <div className="about-container" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', padding: '20px' }}>
           <div style={{ flexGrow: 1, minWidth: '60%', padding: '0 40px', marginTop: '40px' }}>
